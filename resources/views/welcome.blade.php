@@ -41,23 +41,6 @@
 
     </head>
     <body class="antialiased">
-{{--        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">--}}
-{{--            @if (Route::has('login'))--}}
-{{--                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">--}}
-{{--                    @auth--}}
-{{--                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>--}}
-{{--                    @else--}}
-{{--                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>--}}
-
-{{--                        @if (Route::has('register'))--}}
-{{--                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>--}}
-{{--                        @endif--}}
-{{--                    @endauth--}}
-{{--                </div>--}}
-{{--            @endif--}}
-{{--        </div>--}}
-
-
         <!--==========================
           Header
         ============================-->
@@ -67,7 +50,7 @@
                 <div id="logo" class="pull-left">
                     <!-- Uncomment below if you prefer to use a text logo -->
                     <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-                    <a href="#intro" class="scrollto"><img src="landing/img/logo.png" alt="" title=""></a>
+                    <a href="#intro" class="scrollto"><img src="ctalogo.png" alt="" title=""></a>
                 </div>
 
                 <nav id="nav-menu-container">
@@ -75,13 +58,28 @@
                         <li class="menu-active"><a href="#intro">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#speakers">Speakers</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
+{{--                        <li><a href="#schedule">Schedule</a></li>--}}
                         <li><a href="#venue">Venue</a></li>
-                        <li><a href="#hotels">Hotels</a></li>
+{{--                        <li><a href="#hotels">Hotels</a></li>--}}
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#sponsors">Sponsors</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li>
+
+                        @if (Route::has('login'))
+                            <li class="hidden fixed top-0 right-0  sm:block">
+                                @auth
+                                    <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+
+                                @else
+                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                            </li>
+                                    @if (Route::has('register'))
+                                       <li ><a href="{{ route('register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
+                                    @endif
+                                @endauth
+
+                        @endif
+{{--                        <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li>--}}
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
@@ -92,11 +90,11 @@
         ============================-->
         <section id="intro">
             <div class="intro-container wow fadeIn">
-                <h1 class="mb-4 pb-0">The Annual<br><span>Marketing</span> Conference</h1>
-                <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>
-                <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+                <h1 class="mb-4 pb-0" style="color: #f82249">Conference<br>travel Application</h1>
+{{--                <p class="mb-4 pb-0">10-12 December, Downtown Conference Center, New York</p>--}}
+                <a href="#" class="venobox play-btn mb-4" data-vbtype="video"
                    data-autoplay="true"></a>
-                <a href="#about" class="about-btn scrollto">About The Event</a>
+                <a href="#about" class="about-btn scrollto">About Us</a>
             </div>
         </section>
 
@@ -235,259 +233,259 @@
             <!--==========================
               Schedule Section
             ============================-->
-            <section id="schedule" class="section-with-bg">
-                <div class="container wow fadeInUp">
-                    <div class="section-header">
-                        <h2>Event Schedule</h2>
-                        <p>Here is our event schedule</p>
-                    </div>
+{{--            <section id="schedule" class="section-with-bg">--}}
+{{--                <div class="container wow fadeInUp">--}}
+{{--                    <div class="section-header">--}}
+{{--                        <h2>Event Schedule</h2>--}}
+{{--                        <p>Here is our event schedule</p>--}}
+{{--                    </div>--}}
 
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
-                        </li>
-                    </ul>
+{{--                    <ul class="nav nav-tabs" role="tablist">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-                    <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
-                        necessitatibus voluptatem quis labore perspiciatis quia.</h3>
+{{--                    <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius--}}
+{{--                        necessitatibus voluptatem quis labore perspiciatis quia.</h3>--}}
 
-                    <div class="tab-content row justify-content-center">
+{{--                    <div class="tab-content row justify-content-center">--}}
 
-                        <!-- Schdule Day 1 -->
-                        <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+{{--                        <!-- Schdule Day 1 -->--}}
+{{--                        <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>09:30 AM</time></div>
-                                <div class="col-md-10">
-                                    <h4>Registration</h4>
-                                    <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>09:30 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <h4>Registration</h4>--}}
+{{--                                    <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>10:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/1.jpg" alt="Brenden Legros">
-                                    </div>
-                                    <h4>Keynote <span>Brenden Legros</span></h4>
-                                    <p>Facere provident incidunt quos voluptas.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>10:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/1.jpg" alt="Brenden Legros">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Keynote <span>Brenden Legros</span></h4>--}}
+{{--                                    <p>Facere provident incidunt quos voluptas.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>11:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/2.jpg" alt="Hubert Hirthe">
-                                    </div>
-                                    <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                                    <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>11:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/2.jpg" alt="Hubert Hirthe">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>--}}
+{{--                                    <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>12:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/3.jpg" alt="Cole Emmerich">
-                                    </div>
-                                    <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                                    <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>12:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/3.jpg" alt="Cole Emmerich">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>--}}
+{{--                                    <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>02:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/4.jpg" alt="Jack Christiansen">
-                                    </div>
-                                    <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                                    <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>02:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/4.jpg" alt="Jack Christiansen">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>--}}
+{{--                                    <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>03:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/5.jpg" alt="Alejandrin Littel">
-                                    </div>
-                                    <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                                    <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>03:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/5.jpg" alt="Alejandrin Littel">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>--}}
+{{--                                    <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>04:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/6.jpg" alt="Willow Trantow">
-                                    </div>
-                                    <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                                    <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>04:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/6.jpg" alt="Willow Trantow">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>--}}
+{{--                                    <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
-                        <!-- End Schdule Day 1 -->
+{{--                        </div>--}}
+{{--                        <!-- End Schdule Day 1 -->--}}
 
-                        <!-- Schdule Day 2 -->
-                        <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+{{--                        <!-- Schdule Day 2 -->--}}
+{{--                        <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>10:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/1.jpg" alt="Brenden Legros">
-                                    </div>
-                                    <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                                    <p>Facere provident incidunt quos voluptas.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>10:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/1.jpg" alt="Brenden Legros">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>--}}
+{{--                                    <p>Facere provident incidunt quos voluptas.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>11:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/2.jpg" alt="Hubert Hirthe">
-                                    </div>
-                                    <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                                    <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>11:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/2.jpg" alt="Hubert Hirthe">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>--}}
+{{--                                    <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>12:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/3.jpg" alt="Cole Emmerich">
-                                    </div>
-                                    <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                                    <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>12:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/3.jpg" alt="Cole Emmerich">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>--}}
+{{--                                    <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>02:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/4.jpg" alt="Jack Christiansen">
-                                    </div>
-                                    <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                                    <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>02:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/4.jpg" alt="Jack Christiansen">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>--}}
+{{--                                    <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>03:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/5.jpg" alt="Alejandrin Littel">
-                                    </div>
-                                    <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                                    <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>03:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/5.jpg" alt="Alejandrin Littel">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>--}}
+{{--                                    <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>04:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/6.jpg" alt="Willow Trantow">
-                                    </div>
-                                    <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                                    <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>04:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/6.jpg" alt="Willow Trantow">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>--}}
+{{--                                    <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
-                        <!-- End Schdule Day 2 -->
+{{--                        </div>--}}
+{{--                        <!-- End Schdule Day 2 -->--}}
 
-                        <!-- Schdule Day 3 -->
-                        <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+{{--                        <!-- Schdule Day 3 -->--}}
+{{--                        <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>10:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/2.jpg" alt="Hubert Hirthe">
-                                    </div>
-                                    <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                                    <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>10:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/2.jpg" alt="Hubert Hirthe">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>--}}
+{{--                                    <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>11:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/3.jpg" alt="Cole Emmerich">
-                                    </div>
-                                    <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                                    <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>11:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/3.jpg" alt="Cole Emmerich">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>--}}
+{{--                                    <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>12:00 AM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/1.jpg" alt="Brenden Legros">
-                                    </div>
-                                    <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                                    <p>Facere provident incidunt quos voluptas.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>12:00 AM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/1.jpg" alt="Brenden Legros">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>--}}
+{{--                                    <p>Facere provident incidunt quos voluptas.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>02:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/4.jpg" alt="Jack Christiansen">
-                                    </div>
-                                    <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                                    <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>02:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/4.jpg" alt="Jack Christiansen">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>--}}
+{{--                                    <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>03:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/5.jpg" alt="Alejandrin Littel">
-                                    </div>
-                                    <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                                    <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>03:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/5.jpg" alt="Alejandrin Littel">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>--}}
+{{--                                    <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row schedule-item">
-                                <div class="col-md-2"><time>04:00 PM</time></div>
-                                <div class="col-md-10">
-                                    <div class="speaker">
-                                        <img src="landing/img/speakers/6.jpg" alt="Willow Trantow">
-                                    </div>
-                                    <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                                    <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                                </div>
-                            </div>
+{{--                            <div class="row schedule-item">--}}
+{{--                                <div class="col-md-2"><time>04:00 PM</time></div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <div class="speaker">--}}
+{{--                                        <img src="landing/img/speakers/6.jpg" alt="Willow Trantow">--}}
+{{--                                    </div>--}}
+{{--                                    <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>--}}
+{{--                                    <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
-                        <!-- End Schdule Day 2 -->
+{{--                        </div>--}}
+{{--                        <!-- End Schdule Day 2 -->--}}
 
-                    </div>
+{{--                    </div>--}}
 
-                </div>
+{{--                </div>--}}
 
-            </section>
+{{--            </section>--}}
 
             <!--==========================
               Venue Section
@@ -593,70 +591,70 @@
             <!--==========================
               Hotels Section
             ============================-->
-            <section id="hotels" class="section-with-bg wow fadeInUp">
+{{--            <section id="hotels" class="section-with-bg wow fadeInUp">--}}
 
-                <div class="container">
-                    <div class="section-header">
-                        <h2>Hotels</h2>
-                        <p>Her are some nearby hotels</p>
-                    </div>
+{{--                <div class="container">--}}
+{{--                    <div class="section-header">--}}
+{{--                        <h2>Hotels</h2>--}}
+{{--                        <p>Her are some nearby hotels</p>--}}
+{{--                    </div>--}}
 
-                    <div class="row">
+{{--                    <div class="row">--}}
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="hotel">
-                                <div class="hotel-img">
-                                    <img src="landing/img/hotels/1.jpg" alt="Hotel 1" class="img-fluid">
-                                </div>
-                                <h3><a href="#">Hotel 1</a></h3>
-                                <div class="stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <p>0.4 Mile from the Venue</p>
-                            </div>
-                        </div>
+{{--                        <div class="col-lg-4 col-md-6">--}}
+{{--                            <div class="hotel">--}}
+{{--                                <div class="hotel-img">--}}
+{{--                                    <img src="landing/img/hotels/1.jpg" alt="Hotel 1" class="img-fluid">--}}
+{{--                                </div>--}}
+{{--                                <h3><a href="#">Hotel 1</a></h3>--}}
+{{--                                <div class="stars">--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                </div>--}}
+{{--                                <p>0.4 Mile from the Venue</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="hotel">
-                                <div class="hotel-img">
-                                    <img src="landing/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
-                                </div>
-                                <h3><a href="#">Hotel 2</a></h3>
-                                <div class="stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-full"></i>
-                                </div>
-                                <p>0.5 Mile from the Venue</p>
-                            </div>
-                        </div>
+{{--                        <div class="col-lg-4 col-md-6">--}}
+{{--                            <div class="hotel">--}}
+{{--                                <div class="hotel-img">--}}
+{{--                                    <img src="landing/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">--}}
+{{--                                </div>--}}
+{{--                                <h3><a href="#">Hotel 2</a></h3>--}}
+{{--                                <div class="stars">--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star-half-full"></i>--}}
+{{--                                </div>--}}
+{{--                                <p>0.5 Mile from the Venue</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="hotel">
-                                <div class="hotel-img">
-                                    <img src="landing/img/hotels/3.jpg" alt="Hotel 3" class="img-fluid">
-                                </div>
-                                <h3><a href="#">Hotel 3</a></h3>
-                                <div class="stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <p>0.6 Mile from the Venue</p>
-                            </div>
-                        </div>
+{{--                        <div class="col-lg-4 col-md-6">--}}
+{{--                            <div class="hotel">--}}
+{{--                                <div class="hotel-img">--}}
+{{--                                    <img src="landing/img/hotels/3.jpg" alt="Hotel 3" class="img-fluid">--}}
+{{--                                </div>--}}
+{{--                                <h3><a href="#">Hotel 3</a></h3>--}}
+{{--                                <div class="stars">--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                    <i class="fa fa-star"></i>--}}
+{{--                                </div>--}}
+{{--                                <p>0.6 Mile from the Venue</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </section>
+{{--            </section>--}}
 
             <!--==========================
               Gallery Section
@@ -853,120 +851,120 @@
             <!--==========================
               Buy Ticket Section
             ============================-->
-            <section id="buy-tickets" class="section-with-bg wow fadeInUp">
-                <div class="container">
+{{--            <section id="buy-tickets" class="section-with-bg wow fadeInUp">--}}
+{{--                <div class="container">--}}
 
-                    <div class="section-header">
-                        <h2>Buy Tickets</h2>
-                        <p>Velit consequatur consequatur inventore iste fugit unde omnis eum aut.</p>
-                    </div>
+{{--                    <div class="section-header">--}}
+{{--                        <h2>Buy Tickets</h2>--}}
+{{--                        <p>Velit consequatur consequatur inventore iste fugit unde omnis eum aut.</p>--}}
+{{--                    </div>--}}
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card mb-5 mb-lg-0">
-                                <div class="card-body">
-                                    <h5 class="card-title text-muted text-uppercase text-center">Standard Access</h5>
-                                    <h6 class="card-price text-center">$150</h6>
-                                    <hr>
-                                    <ul class="fa-ul">
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Community Access</li>
-                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>
-                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li>
-                                    </ul>
-                                    <hr>
-                                    <div class="text-center">
-                                        <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-5 mb-lg-0">
-                                <div class="card-body">
-                                    <h5 class="card-title text-muted text-uppercase text-center">Pro Access</h5>
-                                    <h6 class="card-price text-center">$250</h6>
-                                    <hr>
-                                    <ul class="fa-ul">
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
-                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>
-                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li>
-                                    </ul>
-                                    <hr>
-                                    <div class="text-center">
-                                        <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Pro Tier -->
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>
-                                    <h6 class="card-price text-center">$350</h6>
-                                    <hr>
-                                    <ul class="fa-ul">
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Workshop Access</li>
-                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>After Party</li>
-                                    </ul>
-                                    <hr>
-                                    <div class="text-center">
-                                        <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Buy Now</button>
-                                    </div>
+{{--                    <div class="row">--}}
+{{--                        <div class="col-lg-4">--}}
+{{--                            <div class="card mb-5 mb-lg-0">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="card-title text-muted text-uppercase text-center">Standard Access</h5>--}}
+{{--                                    <h6 class="card-price text-center">$150</h6>--}}
+{{--                                    <hr>--}}
+{{--                                    <ul class="fa-ul">--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>--}}
+{{--                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Community Access</li>--}}
+{{--                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>--}}
+{{--                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li>--}}
+{{--                                    </ul>--}}
+{{--                                    <hr>--}}
+{{--                                    <div class="text-center">--}}
+{{--                                        <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Buy Now</button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-lg-4">--}}
+{{--                            <div class="card mb-5 mb-lg-0">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="card-title text-muted text-uppercase text-center">Pro Access</h5>--}}
+{{--                                    <h6 class="card-price text-center">$250</h6>--}}
+{{--                                    <hr>--}}
+{{--                                    <ul class="fa-ul">--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>--}}
+{{--                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>--}}
+{{--                                        <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li>--}}
+{{--                                    </ul>--}}
+{{--                                    <hr>--}}
+{{--                                    <div class="text-center">--}}
+{{--                                        <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Buy Now</button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Pro Tier -->--}}
+{{--                        <div class="col-lg-4">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>--}}
+{{--                                    <h6 class="card-price text-center">$350</h6>--}}
+{{--                                    <hr>--}}
+{{--                                    <ul class="fa-ul">--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>Workshop Access</li>--}}
+{{--                                        <li><span class="fa-li"><i class="fa fa-check"></i></span>After Party</li>--}}
+{{--                                    </ul>--}}
+{{--                                    <hr>--}}
+{{--                                    <div class="text-center">--}}
+{{--                                        <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Buy Now</button>--}}
+{{--                                    </div>--}}
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                </div>
+{{--                </div>--}}
 
-                <!-- Modal Order Form -->
-                <div id="buy-ticket-modal" class="modal fade">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Buy Tickets</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form method="POST" action="#">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="your-name" placeholder="Your Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="your-email" placeholder="Your Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <select id="ticket-type" name="ticket-type" class="form-control" >
-                                            <option value="">-- Select Your Ticket Type --</option>
-                                            <option value="standard-access">Standard Access</option>
-                                            <option value="pro-access">Pro Access</option>
-                                            <option value="premium-access">Premium Access</option>
-                                        </select>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn">Buy Now</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
+{{--                <!-- Modal Order Form -->--}}
+{{--                <div id="buy-ticket-modal" class="modal fade">--}}
+{{--                    <div class="modal-dialog" role="document">--}}
+{{--                        <div class="modal-content">--}}
+{{--                            <div class="modal-header">--}}
+{{--                                <h4 class="modal-title">Buy Tickets</h4>--}}
+{{--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                                    <span aria-hidden="true">&times;</span>--}}
+{{--                                </button>--}}
+{{--                            </div>--}}
+{{--                            <div class="modal-body">--}}
+{{--                                <form method="POST" action="#">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <input type="text" class="form-control" name="your-name" placeholder="Your Name">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <input type="text" class="form-control" name="your-email" placeholder="Your Email">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <select id="ticket-type" name="ticket-type" class="form-control" >--}}
+{{--                                            <option value="">-- Select Your Ticket Type --</option>--}}
+{{--                                            <option value="standard-access">Standard Access</option>--}}
+{{--                                            <option value="pro-access">Pro Access</option>--}}
+{{--                                            <option value="premium-access">Premium Access</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="text-center">--}}
+{{--                                        <button type="submit" class="btn">Buy Now</button>--}}
+{{--                                    </div>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
+{{--                        </div><!-- /.modal-content -->--}}
+{{--                    </div><!-- /.modal-dialog -->--}}
+{{--                </div><!-- /.modal -->--}}
 
-            </section>
+{{--            </section>--}}
 
             <!--==========================
               Contact Section
@@ -1039,7 +1037,6 @@
 
         </main>
 
-
         <!--==========================
           Footer
         ============================-->
@@ -1101,15 +1098,10 @@
 
             <div class="container">
                 <div class="copyright">
-                    &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+                    &copy; Copyright <strong>CTA</strong>.
                 </div>
                 <div class="credits">
-                    <!--
-                      All the links in the footer should remain intact.
-                      You can delete the links only if you purchased the pro version.
-                      Licensing information: https://bootstrapmade.com/license/
-                      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
-                    -->
+
                     Designed by <a href="#">Frank Agukwe</a>
                 </div>
             </div>
