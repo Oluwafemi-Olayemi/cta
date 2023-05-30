@@ -13,7 +13,7 @@ class ConferenceResources extends Controller
      */
     public function index()
     {
-        return "got here";
+        return "designing database";
     }
 
     /**
