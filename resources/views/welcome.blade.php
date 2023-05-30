@@ -754,7 +754,7 @@
                 <div class="container wow fadeInUp">
                     <div class="section-header">
                         <h2>Newsletter</h2>
-                        <p>subscribe to updates regarding upcoming conferences and other vital information.</p>
+                        <p>subscribe for updates regarding upcoming conferences and other vital information.</p>
                     </div>
 
                     <form method="POST" action="#">
