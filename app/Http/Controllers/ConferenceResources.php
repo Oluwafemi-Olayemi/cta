@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Conference;
 use Illuminate\Http\Request;
 
 class ConferenceResources extends Controller
@@ -9,11 +10,14 @@ class ConferenceResources extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return "designing database";
+        $conferences = Conference::paginate(5); // Fetch items with pagination, 10 items per page
+
+        //return view('items.index', ['items' => $items]);
+        return view('viewgrant', ['conferences' => $conferences]);
     }
 
     /**
