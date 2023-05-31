@@ -108,8 +108,6 @@ class ConferencesTableSeeder extends Seeder
                 'description' => 'Collision is a technology conference that brings together startups, investors, and industry leaders to discuss emerging technologies, innovation, and entrepreneurship.',
                 'created_at' => Carbon::today()->addDays(rand(0, 365))
             ]
-
-
         ]);
     }
 }
