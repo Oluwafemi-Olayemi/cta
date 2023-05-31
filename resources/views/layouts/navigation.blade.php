@@ -21,7 +21,27 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('conferences.index')" :active="request()->routeIs('conferences')">
-                        {{ __('Check Grant Status') }}
+                        {{ __('Search for conference') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('conferences.index')" :active="request()->routeIs('conferences')">
+                        {{ __('Search for Grant') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('conferences.index')" :active="request()->routeIs('conferences')">
+                        {{ __('Grant Information') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('conferences.index')" :active="request()->routeIs('conferences')">
+                        {{ __('Apply for Grant') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('conferences.index')" :active="request()->routeIs('conferences')">
+                        {{ __('View Grant Status') }}
                     </x-nav-link>
                 </div>
             </div>
