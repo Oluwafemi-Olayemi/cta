@@ -19,8 +19,28 @@
                                 <p><span class="font-semibold">Location:</span>{{$conference->location}}</p>
                                 <p><span class="font-semibold">Description:</span> {{$conference->description}}</p>
                                 <div class="flex justify-end">
-                                    <x-secondary-button href="{{$conference->id}}" class="mr-2">Cancel Application</x-secondary-button>
-                                    <x-primary-button href="{{$conference->id}}">Apply for grant</x-primary-button>
+                                    <form method="POST" action="{{route('grants.update', $conference->id)}}">
+
+
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="hidden" name="grantrequest" value="apply">
+                                        <x-primary-button type="submit">Apply for grant</x-primary-button>
+
+                                    </form>
+
+                                    <form method="POST" action="{{route('grants.update', $conference->id)}}">
+
+
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="hidden" name="grantrequest" value="cancel">
+
+                                        <x-secondary-button type="submit" class="mr-2">Cancel Application</x-secondary-button>
+                                    </form>
+
+
+
                                 </div>
 
                             </li>

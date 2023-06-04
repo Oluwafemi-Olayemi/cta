@@ -18,8 +18,18 @@ return new class extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('description');
+//            $table->foreign('user_id')
+//                ->references('id')
+//                ->constrained()
+//                ->onUpdate('cascade')
+//                ->onDelete('cascade');
             $table->timestamps();
         });
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 
     /**

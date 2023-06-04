@@ -9,4 +9,9 @@ class Conference extends Model
 {
     use HasFactory;
     public $timestamps = true;
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

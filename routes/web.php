@@ -23,7 +23,16 @@ Route::middleware(['auth', 'verified'])->group(function(){
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/searchconference', function(){
+       return view('conferences.search');
+    })->name('searchview');
+
     Route::resource('/conferences',\App\Http\Controllers\ConferenceResources::class);
+    Route::post('/searchconference', [\App\Http\Controllers\ConferenceResources::class, 'search'])
+        ->name('conferences.search');
+
+    Route::resource('/grants',\App\Http\Controllers\GrantResources::class);
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -33,3 +42,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
