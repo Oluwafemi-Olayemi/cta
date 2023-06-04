@@ -44,6 +44,6 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 
     public function conferences()
     {
-        return $this->hasMany('App\Models\Conference', 'conference_user');
+        return $this->belongsToMany(Conference::class);
     }
 }
