@@ -42,8 +42,8 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function conferences(): HasMany
+    public function conferences()
     {
-        return $this->hasMany(Conference::class);
+        return $this->hasMany('App\Models\Conference', 'conference_user');
     }
 }
