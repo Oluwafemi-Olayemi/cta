@@ -71,37 +71,27 @@ class GrantResources extends Controller
      */
     public function update(Request $request, $conf_id)
     {
-        logger($conf_id);
-
         try {
             $user = User::findOrFail(Auth::id());
             $conference = Conference::findOrFail($conf_id);
 
             // Create a new record in the pivot table
 
-
             if($request->input('grantrequest') == 'apply'){
-                $user->conferences()->attach($conference->id, ['status' => 'requested']);
-
-//                $user->conferences()->createOrFail([
-//                    'user_id' => $user->id,
-//                    'conference_id' => $conference->id,
-//                    'status' => 'requested'
-//                ]);
-                // Success message or further actions
+                $user->conferences()->syncWithoutDetaching([
+                    $conference->id => ['grantstatus_id' => config('grantstatus.requested')]
+                ]);
+                $conference->grantstatus_id = config('grantstatus.requested');
+                $conference->save();
                 return redirect()->back()->with('success', 'You have successfully requested for a grant');
             }else{
-                $user->conference()->createOrFail([
-                    'user_id' => $user->id,
-                    'conference_id' => $conference->id,
-                    'status' => null
-                ]);
+                $user->conferences()->detach($conference->id);
                 return redirect()->back()->with('failure', 'you are not permitted to request for a grant');
             }
 
         } catch (\Exception $e) {
             // Error handling
-            logger($e);
+
             return redirect()->back()->with('error', 'Unable to request for a grant');
         }
 

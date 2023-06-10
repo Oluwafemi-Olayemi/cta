@@ -24,11 +24,6 @@ return new class extends Migration
         });
     }
 
-    public function conferences()
-    {
-        return $this->belongsToMany('App\Models\Conferences');
-    }
-
     /**
      * Reverse the migrations.
      *

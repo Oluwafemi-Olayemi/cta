@@ -13,20 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('conference_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
+        Schema::create('conference_grantstatus', function (Blueprint $table) {
             $table->unsignedBigInteger('conference_id');
+            $table->unsignedBigInteger('grantstatus_id');
 
-            $table->primary(['user_id', 'conference_id']);
-
-            $table->set('status',['requested','granted', 'denied'])->nullable();
-
-            $table->foreign('user_id')->references('id')
-                ->on('users')
-                ->onDelete('cascade');
 
             $table->foreign('conference_id')->references('id')
                 ->on('conferences')
+                ->onDelete('cascade');
+
+            $table->foreign('grantstatus_id')->references('id')
+                ->on('grantstatuses')
                 ->onDelete('cascade');
         });
     }
@@ -38,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conference_user');
+        Schema::dropIfExists('conference_grant');
     }
 };

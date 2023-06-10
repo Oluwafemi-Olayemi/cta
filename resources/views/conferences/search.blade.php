@@ -69,15 +69,30 @@
                                 <p><span class="font-semibold">Location:</span>{{$conference->location}}</p>
                                 <p><span class="font-semibold">Description:</span> {{$conference->description}}</p>
                                 <div class="flex justify-end">
-                                    <x-secondary-button href="{{$conference->id}}" class="mr-2">Cancel Application</x-secondary-button>
-                                    <x-primary-button href="{{$conference->id}}">Apply for grant</x-primary-button>
+                                    <form method="POST" action="{{route('grants.update', $conference->id)}}">
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="hidden" name="grantid" value="">
+                                        <input type="hidden" name="grantrequest" value="apply">
+                                        @if($conference->grantstatus_id == config('grantstatus.seeking'))
+                                            <input type="hidden" name="grantrequest" value="apply">
+                                            <x-primary-button type="submit">Apply for grant</x-primary-button>
+                                        @elseif($conference->grantstatus_id == config('grantstatus.requested'))
+                                            <input type="hidden" name="grantrequest" value="cancel">
+                                            <x-secondary-button type="submit">Cancel Application
+                                            </x-secondary-button>
+                                        @elseif($conference->grantstatus_id == config('grantstatus.granted'))
+                                            <x-secondary-button>Granted</x-secondary-button>
+                                        @else
+                                            <x-secondary-button>Denied</x-secondary-button>
+                                        @endif
+                                    </form>
                                 </div>
-
                             </li>
                         </ul>
                     </div>
-
                 </div>
+
             @endforeach
             @endisset
         </div>

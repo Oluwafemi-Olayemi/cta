@@ -16,7 +16,7 @@ class ConferencesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('conferences')->insert([
+        $conferences = [
 
             [
                 'name' => 'Web Summit',
@@ -108,6 +108,15 @@ class ConferencesTableSeeder extends Seeder
                 'description' => 'Collision is a technology conference that brings together startups, investors, and industry leaders to discuss emerging technologies, innovation, and entrepreneurship.',
                 'created_at' => Carbon::today()->addDays(rand(0, 365))
             ]
-        ]);
+        ];
+
+        foreach($conferences as $index=>$conference){
+            DB::table('conferences')->insert($conference);
+            DB::table('conference_grantstatus')->insert([
+                'conference_id' => $index+1,
+                'grantstatus_id' => 1
+            ]);
+        }
+
     }
 }

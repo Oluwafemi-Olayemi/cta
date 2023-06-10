@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Conference;
+use App\Models\GrantStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use function PHPUnit\Framework\isEmpty;
+
 
 class ConferenceResources extends Controller
 {
@@ -15,10 +18,8 @@ class ConferenceResources extends Controller
      */
     public function index()
     {
-        $conferences = Conference::paginate(5); // Fetch items with pagination, 10 items per page
-
-        //return view('items.index', ['items' => $items]);
-        return view('viewgrant', ['conferences' => $conferences]);
+        $conferences = DB::table('conferences')->paginate(5);
+        return view('viewgrant', compact('conferences'));
     }
 
     /**
@@ -72,6 +73,7 @@ class ConferenceResources extends Controller
         $location = $request->input('location');
 
         $query = Conference::where("name", "like", "%{$search}%");
+
         // Add date criteria
         if ($date) {
             $query->whereDate('created_at', $date);
@@ -82,6 +84,7 @@ class ConferenceResources extends Controller
         }
         // Get the matching conferences
         $conferences = $query->get();
+
 
         return view('conferences.search', ['conferences' => $conferences]);
     }
