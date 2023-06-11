@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('description');
+            $table->longText('full_description');
             $table->timestamps();
         });
     }

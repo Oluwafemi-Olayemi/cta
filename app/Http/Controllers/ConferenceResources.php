@@ -19,6 +19,7 @@ class ConferenceResources extends Controller
     public function index()
     {
         $conferences = DB::table('conferences')->paginate(5);
+
         return view('viewgrant', compact('conferences'));
     }
 
