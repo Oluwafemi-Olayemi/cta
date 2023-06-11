@@ -12,6 +12,7 @@ class Dashboard extends Controller
         $usersConferences = DB::table('users')->where('users.id', '=', Auth::id())
             ->join('conference_user', 'users.id', '=', 'conference_user.user_id')
             ->join('conferences', 'conferences.id', '=', 'conference_user.conference_id')
+            ->select('conferences.*', 'conference_user.*')
             ->get();
 
         return view('dashboard', compact('usersConferences'));

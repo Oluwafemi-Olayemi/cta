@@ -17,4 +17,6 @@ class GrantStatus extends Model
     {
         return $this->belongTo(Conference::class);
     }
+
+
 }
