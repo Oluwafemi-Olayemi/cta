@@ -58,42 +58,54 @@
                 </div>
 
             @isset($conferences)
-            <h1 class="text-2xl font-bold mb-4">Search result</h1>
-            @foreach ($conferences as $conference)
-                <div class="overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-                        <ul class="space-y-4">
-                            <li class="bg-white shadow-md rounded-lg p-4">
-                                <h2 class="text-lg font-bold border-b-2 border-indigo-400">{{$conference->name}}</h2>
-                                <p><span class="font-semibold">Date:</span> {{$conference->created_at->format('Y F j') }} ({{$conference->created_at->diffForHumans()}}) </p>
-                                <p><span class="font-semibold">Location:</span>{{$conference->location}}</p>
-                                <p><span class="font-semibold">Description:</span> {{$conference->description}}</p>
-                                <div class="flex justify-end">
-                                    <form method="POST" action="{{route('grants.update', $conference->id)}}">
+            <h1 class="text-2xl font-bold">Search result</h1>
+                @foreach ($conferences as $conference)
+                    <div class="overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="text-gray-900">
+                            <ul class="space-y-4">
+                                <li class="bg-white shadow-md rounded-lg p-4">
+                                    <h2 class="text-lg font-bold border-b-2 border-indigo-400">{{$conference->name}}</h2>
+                                    <p><span
+                                            class="font-semibold">Date:</span> {{ Carbon\Carbon::parse($conference->created_at)->format('Y F j') }}
+                                        ({{Carbon\Carbon::parse($conference->created_at)->diffForHumans()}})</p>
+                                    <p><span class="font-semibold">Location:</span>{{$conference->location}}</p>
+                                    <p><span class="font-semibold">Description:</span> {{$conference->description}}</p>
+
+                                    <div x-data="{ open: false }" class="py-2">
+                                        <x-secondary-button @click="open = ! open">View and Apply for Grant
+                                        </x-secondary-button>
+
+                                        <span x-show="open" x-transition>
+                                            <div class="py-2">
+                                                {!! html_entity_decode($conference->full_description) !!}
+                                            <form method="POST" action="{{route('grants.update', $conference->id)}}">
                                         @csrf
-                                        @method('PUT')
-                                        <input type="hidden" name="grantid" value="">
-                                        <input type="hidden" name="grantrequest" value="apply">
-                                        @if($conference->grantstatus_id == config('grantstatus.seeking'))
+                                                @method('PUT')
                                             <input type="hidden" name="grantrequest" value="apply">
                                             <x-primary-button type="submit">Apply for grant</x-primary-button>
-                                        @elseif($conference->grantstatus_id == config('grantstatus.requested'))
-                                            <input type="hidden" name="grantrequest" value="cancel">
-                                            <x-secondary-button type="submit">Cancel Application
-                                            </x-secondary-button>
-                                        @elseif($conference->grantstatus_id == config('grantstatus.granted'))
-                                            <x-secondary-button>Granted</x-secondary-button>
-                                        @else
-                                            <x-secondary-button>Denied</x-secondary-button>
-                                        @endif
-                                    </form>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-            @endforeach
+                                    </form>
+                                                </div>
+                                        </span>
+
+
+                                        {{--                                    <form method="POST" action="{{route('grants.update', $conference->id)}}">--}}
+                                        {{--                                        @csrf--}}
+                                        {{--                                        @method('PUT')--}}
+                                        {{--                                        <input type="hidden" name="grantrequest" value="cancel">--}}
+                                        {{--                                        <x-secondary-button type="submit" class="ml-2">Cancel Application--}}
+                                        {{--                                        </x-secondary-button>--}}
+                                        {{--                                    </form>--}}
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                @endforeach
+
+
             @endisset
         </div>
 

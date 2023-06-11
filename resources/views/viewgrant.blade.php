@@ -20,13 +20,12 @@
                                 <p><span class="font-semibold">Location:</span>{{$conference->location}}</p>
                                 <p><span class="font-semibold">Description:</span> {{$conference->description}}</p>
 
-                                <div x-data="{ open: false }">
+                                <div x-data="{ open: false }" class="py-2">
                                     <x-secondary-button @click="open = ! open">View and Apply for Grant
                                     </x-secondary-button>
 
                                     <span x-show="open" x-transition>
-                                            <div>
-
+                                            <div class="py-2">
                                                 {!! html_entity_decode($conference->full_description) !!}
                                             <form method="POST" action="{{route('grants.update', $conference->id)}}">
                                         @csrf
