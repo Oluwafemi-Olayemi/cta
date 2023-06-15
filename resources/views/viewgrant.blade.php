@@ -53,7 +53,6 @@
 
                 </div>
             @endforeach
-
             {{ $conferences->links() }}
         </div>
     </div>
