@@ -57,5 +57,9 @@
 
 
 @push("scripts")
-
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
 @endpush
