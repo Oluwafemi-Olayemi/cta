@@ -26,6 +26,12 @@ return new class extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('pcode')->nullable();
+            $table->string('qualification')->nullable();
+            $table->text('attachments')->nullable();
         });
     }
 

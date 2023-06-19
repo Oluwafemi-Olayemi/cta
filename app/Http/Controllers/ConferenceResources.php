@@ -58,13 +58,13 @@ class ConferenceResources extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     *
      */
     public function search(Request $request)
     {
         //validate data
         $request->validate([
-            'search' => 'required',
+            'search' => 'nullable',
             'date' => 'nullable|date',
             'location' => 'nullable'
         ]);
@@ -77,11 +77,11 @@ class ConferenceResources extends Controller
 
         // Add date criteria
         if ($date) {
-            $query->whereDate('created_at', $date);
+            $query->whereDate('created_at', '>=' ,$date);
         }
         // Add location criteria
         if ($location) {
-            $query->where('location', $location);
+            $query->where('location', "like", "%{$location}%");
         }
         // Get the matching conferences
         $conferences = $query->get();

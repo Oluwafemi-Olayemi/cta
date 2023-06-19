@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::post('/newsletter', [\App\Http\Controllers\NewsletterController::class, 'createNewsletter']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

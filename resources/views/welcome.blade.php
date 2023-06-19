@@ -91,7 +91,7 @@
         <section id="intro">
             <div class="intro-container wow fadeIn">
                 <h1 class="mb-4 pb-0" style="color: #f82249">Conference<br>travel Application</h1>
-                <a href="#" class="venobox play-btn mb-4" data-vbtype="video"
+                <a href="https://www.youtube.com/watch?v=WGA2P_oH5Xc" class="venobox play-btn mb-4" data-vbtype="video"
                    data-autoplay="true"></a>
                 <a href="#about" class="about-btn scrollto">About Us</a>
             </div>
@@ -752,14 +752,25 @@
             <section id="subscribe">
                 <div class="container wow fadeInUp">
                     <div class="section-header">
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{session('success')}}
+                            </div>
+                        @endif
+                        @if(session('error'))
+                            <div class="alert alert-danger">
+                                {{session('error')}}
+                            </div>
+                        @endif
                         <h2>Newsletter</h2>
                         <p>subscribe for updates regarding upcoming conferences and other vital information.</p>
                     </div>
 
-                    <form method="POST" action="#">
+                    <form method="POST" action="/newsletter">
+                        @csrf
                         <div class="form-row justify-content-center">
                             <div class="col-auto">
-                                <input type="text" class="form-control" placeholder="Enter your Email">
+                                <input type="text" class="form-control" name="email" placeholder="Enter your Email">
                             </div>
                             <div class="col-auto">
                                 <button type="submit">Subscribe</button>
@@ -969,10 +980,10 @@
                         <div class="col-lg-3 col-md-6 footer-info">
                             <img src="ctalogo.png" alt="TheEvenet">
                             <p>
-                                Welcome to Conference Travel App, your go-to platform for seamless conference planning
-                                and travel management. We understand the importance of attending conferences and the
-                                challenges that come with it. That's why we've built this app to make your conference
-                                experience effortless and enjoyable.
+                                Welcome to Conference Travel App, your go-to platform for seamless conference and grant
+                                request. We understand the importance of attending conferences and the challenges that
+                                come with it. That's why we've built this app to make your conference experience
+                                effortless and enjoyable.
                             </p>
                         </div>
 
