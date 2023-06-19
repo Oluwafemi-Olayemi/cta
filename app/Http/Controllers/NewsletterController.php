@@ -16,6 +16,6 @@ class NewsletterController extends Controller
         $newsletter->email = $request->input('email');
         $newsletter->save();
 
-        return redirect()->back()->with('success', 'you have been added to the newsletter');
+        return redirect()->back()->with('news', 'you have been added to the newsletter');
     }
 }
