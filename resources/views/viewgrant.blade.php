@@ -161,7 +161,6 @@
                                                                         <input id="input-id" type="file" class="file"
                                                                                name="attachments[]"
                                                                                data-preview-file-type="text"
-                                                                               accept="image/*"
                                                                                multiple>
                                                                     </div>
                                                                 </div>
