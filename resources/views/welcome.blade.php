@@ -802,7 +802,7 @@
                             <div class="contact-phone">
                                 <i class="ion-ios-telephone-outline"></i>
                                 <h3>Phone Number</h3>
-                                <p><a href="tel:+155895548855">+61426254475</a></p>
+                                <p><a href="tel:+61426254475">+61426254475</a></p>
                             </div>
                         </div>
 
@@ -891,10 +891,9 @@
                             <h4>Contact Us</h4>
                             <p>
                                 A108 Adam Street <br>
-                                New York, NY 535022<br>
-                                United States <br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
+                                Sydney, Australia <br>
+                                <strong>Phone:</strong>+61426254475<br>
+                                <strong>Email:</strong> info@cta.com<br>
                             </p>
 
                             <div class="social-links">
