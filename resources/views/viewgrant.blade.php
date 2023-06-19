@@ -195,8 +195,6 @@
             $(document).ready(function () {
                 // initialize with defaults
                 $("#input-id").fileinput();
-
-
             });
         </script>
 
